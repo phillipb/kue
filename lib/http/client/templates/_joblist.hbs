@@ -1,0 +1,64 @@
+{{#each}}
+  <div class="job">
+    <div class="block contents">
+      <h2 class="id"></h2><a class="remove">x</a>
+      <canvas width="50" height="50" class="progress"></canvas>
+      <table class="meta">
+        <tbody>
+          <tr>
+            <td>Type:</td>
+            <td class="type"></td>
+          </tr>
+          <tr>
+            <td>Title:</td>
+            <td class="title"></td>
+          </tr>
+          <tr>
+            <td>Error:</td>
+            <td class="errorMessage"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="details">
+      <div class="data">
+        <table class="data">
+          <tbody>
+            <tr>
+              <td>State:</td>
+              <td class="state"></td>
+            </tr>
+            <tr>
+              <td>Priority:</td>
+              <td class="priority"></td>
+            </tr>
+            <tr>
+              <td>Attempts:</td>
+              <td class="attempts"></td>
+            </tr>
+            <tr class="time">
+              <td>Duration:</td>
+              <td class="duration"></td>
+            </tr>
+            <tr class="time">
+              <td>Created:</td>
+              <td class="created_at"></td>
+            </tr>
+            <tr class="time">
+              <td>Updated:</td>
+              <td class="updated_at"></td>
+            </tr>
+            <tr class="time">
+              <td>Failed:</td>
+              <td class="failed_at"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="error">
+        <pre></pre>
+      </div>
+      <ul class="log"></ul>
+    </div>
+  </div>
+{{/each}}

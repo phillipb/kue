@@ -1,0 +1,3 @@
+{
+  "ignore": ["README.md", "currentbuild.json","client/**", ".git/**", "server/public/**", "*.jade", "server/temp/**", "server/resources**", "*.aof", "*.rdb"]
+}
