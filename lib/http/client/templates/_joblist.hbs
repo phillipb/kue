@@ -1,64 +1,32 @@
-{{#each}}
+{{#each itemController="Job"}}
   <div class="job">
-    <div class="block contents">
-      <h2 class="id"></h2><a class="remove">x</a>
-      <canvas width="50" height="50" class="progress"></canvas>
-      <table class="meta">
-        <tbody>
-          <tr>
-            <td>Type:</td>
-            <td class="type"></td>
-          </tr>
-          <tr>
-            <td>Title:</td>
-            <td class="title"></td>
-          </tr>
-          <tr>
-            <td>Error:</td>
-            <td class="errorMessage"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="details">
-      <div class="data">
-        <table class="data">
-          <tbody>
-            <tr>
-              <td>State:</td>
-              <td class="state"></td>
-            </tr>
-            <tr>
-              <td>Priority:</td>
-              <td class="priority"></td>
-            </tr>
-            <tr>
-              <td>Attempts:</td>
-              <td class="attempts"></td>
-            </tr>
-            <tr class="time">
-              <td>Duration:</td>
-              <td class="duration"></td>
-            </tr>
-            <tr class="time">
-              <td>Created:</td>
-              <td class="created_at"></td>
-            </tr>
-            <tr class="time">
-              <td>Updated:</td>
-              <td class="updated_at"></td>
-            </tr>
-            <tr class="time">
-              <td>Failed:</td>
-              <td class="failed_at"></td>
-            </tr>
-          </tbody>
-        </table>
+    <div>{{data.title}} <span class="label label-info">{{type}}</span></div>
+      <div>
+        <a style="margin-top:10px" class="btn btn-default " {{action "toggleCode"}} href="#">Show job data</a>
+
+        {{#if error}}
+          <a style="margin-top:10px" class="btn btn-default " {{action "toggleError"}} href="#">Show Error</a>
+        {{/if}}
+
+        {{#if failed}}
+          <a style="margin-top:10px" class="btn btn-primary " {{action "retry"}} href="#">Retry</a>
+
+          <a style="margin-top:10px" class="btn btn-warning " {{action "retryType"}} href="#">Retry all {{type}}s</a>
+        {{/if}}
+
+        <a style="margin-top:10px" class="btn btn-danger " {{action "remove"}} href="#">Delete</a>
+
+        <div {{bind-attr class="hideCode:hide"}} >
+          {{code-highlighter code=data}}
+        </div>
+
+        {{#if error}}
+          <div {{bind-attr class=":alert :alert-danger hideError:hide"}} class="" style="margin-top:20px">
+            {{error}}
+          </div>
+        {{/if}}
       </div>
-      <div class="error">
-        <pre></pre>
-      </div>
-      <ul class="log"></ul>
-    </div>
+
+    <hr />
   </div>
 {{/each}}

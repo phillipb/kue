@@ -1,34 +1,32 @@
-{{#each}}
-	<ul id="menu">
-	  <li class="inactive">
-	  	{{#link-to "inactive"}}
-	  		<div class="count">{{inactiveCount}}</div>Queued
-	  	{{/link-to}}
-	  </li>
-	  <li class="active">
-	  	{{#link-to "active"}}
-	  		<div class="count">{{activeCount}}</div>Active
-	  	{{/link-to}}
-	  </li>
-	  <li class="failed">
-	  	{{#link-to "failed"}}
-	  		<div class="count">{{failedCount}}</div>Failed
-	  	{{/link-to}}
-	  </li>
-	  <li class="complete">
-	  	{{#link-to "complete"}}
-	  		<div class="count">{{completeCount}}</div>Complete
-	  	{{/link-to}}
-	  </li>
-	  <li class="delayed">
-	  	{{#link-to "delayed"}}
-	  		<div class="count">{{delayedCount}}</div>Delayed
-	  	{{/link-to}}
-	  </li>
-	</ul>
-{{/each}}
+<ul id="menu">
+  <li class="inactive">
+  	{{#link-to "inactive"}}
+  		<div class="count">{{inactiveCount}}</div>Queued
+  	{{/link-to}}
+  </li>
+  <li class="active">
+  	{{#link-to "active"}}
+  		<div class="count">{{activeCount}}</div>Active
+  	{{/link-to}}
+  </li>
+  <li class="failed">
+  	{{#link-to "failed"}}
+  		<div class="count">{{failedCount}}</div>Failed
+  	{{/link-to}}
+  </li>
+  <li class="complete">
+  	{{#link-to "complete"}}
+  		<div class="count">{{completeCount}}</div>Complete
+  	{{/link-to}}
+  </li>
+  <li class="delayed">
+  	{{#link-to "delayed"}}
+  		<div class="count">{{delayedCount}}</div>Delayed
+  	{{/link-to}}
+  </li>
+</ul>
 
-<div class="container">
+<div>
     {{outlet}}
- </div>
+</div>
 

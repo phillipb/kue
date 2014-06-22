@@ -1,5 +1,5 @@
 {
-  "name": "Lastvine",
+  "name": "Kue",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "main": "gruntfile.js",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:phillipburch/schejule.git"
+    "url": "git@github.com/phillipb/kue.git"
   },
   "author": "Phillip Burch",
   "license": "ISC",
