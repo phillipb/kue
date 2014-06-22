@@ -1,20 +1,21 @@
 {{#each itemController="Job"}}
   <div class="job">
-    <div>{{data.title}} <span class="label label-info">{{type}}</span></div>
+    <div>{{data.title}} <span class="label label-default">{{type}}</span></div>
       <div>
-        <a style="margin-top:10px" class="btn btn-default " {{action "toggleCode"}} href="#">Show job data</a>
+        {{#if failed}}
+          <a style="margin-top:10px" class="btn btn-primary btn-sm" {{action "retry"}} href="#">Retry</a>
+
+          <a style="margin-top:10px" class="btn btn-warning btn-sm" {{action "retryType"}} href="#">Retry all {{type}}s</a>
+        {{/if}}
+
+        <a style="margin-top:10px" class="btn btn-danger btn-sm" {{action "remove"}} href="#">Delete Job</a>
+
+
+        <a style="margin-top:10px" class="btn btn-link btn-sm" {{action "toggleCode"}} href="#">Show data</a>
 
         {{#if error}}
-          <a style="margin-top:10px" class="btn btn-default " {{action "toggleError"}} href="#">Show Error</a>
+          <a style="margin-top:10px" class="btn btn-link btn-sm" {{action "toggleError"}} href="#">Show Error</a>
         {{/if}}
-
-        {{#if failed}}
-          <a style="margin-top:10px" class="btn btn-primary " {{action "retry"}} href="#">Retry</a>
-
-          <a style="margin-top:10px" class="btn btn-warning " {{action "retryType"}} href="#">Retry all {{type}}s</a>
-        {{/if}}
-
-        <a style="margin-top:10px" class="btn btn-danger " {{action "remove"}} href="#">Delete</a>
 
         <div {{bind-attr class="hideCode:hide"}} >
           {{code-highlighter code=data}}
@@ -25,6 +26,7 @@
             {{error}}
           </div>
         {{/if}}
+        <small class="pull-right">{{toAgo created_at}}</small>
       </div>
 
     <hr />
