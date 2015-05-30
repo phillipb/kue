@@ -6,6 +6,8 @@
           <a style="margin-top:10px" class="btn btn-primary btn-sm" {{action "retry"}} href="#">Retry</a>
 
           <a style="margin-top:10px" class="btn btn-warning btn-sm" {{action "retryType"}} href="#">Retry all {{type}}s</a>
+        {{else}}
+          <a style="margin-top:10px" class="btn btn-primary btn-sm" {{action "retry"}} href="#">Rerun</a>
         {{/if}}
 
         <a style="margin-top:10px" class="btn btn-danger btn-sm" {{action "remove"}} href="#">Delete Job</a>
